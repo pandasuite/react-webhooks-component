@@ -1,23 +1,28 @@
 {
-  "name": "react-boilerplate-component",
+  "name": "react-webhooks-component",
   "version": "1.0.0",
   "homepage": "./",
   "private": true,
   "dependencies": {
     "@craco/craco": "5",
+    "@heroicons/react": "^1.0.1",
+    "@sindresorhus/fnv1a": "^2.0.1",
     "@tailwindcss/forms": "^0.3.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "isomorphic-fetch": "^3.0.0",
     "lodash": "^4.17.21",
-    "pandasuite-bridge": "^4.3.1",
-    "pandasuite-bridge-react": "^2.2.0",
+    "pandasuite-bridge": "^4.3.3",
+    "pandasuite-bridge-react": "^2.2.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^17.0.2",
     "react-intl": "^5.18.1",
-    "react-scripts": "3.4.0"
+    "react-json-view": "^1.21.3",
+    "react-scripts": "3.4.0",
+    "socket.io-client": "^4.1.2"
   },
   "scripts": {
     "start": "craco start",

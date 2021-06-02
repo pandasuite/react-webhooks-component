@@ -1,3 +1,4 @@
 {
-  "request.button.title": "Tester la requête"
+  "span.title": "Lien Webhook",
+  "request.error.generic": "Une erreur est survenue."
 }
