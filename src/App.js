@@ -42,7 +42,7 @@ function App() {
     if (!uniqueId) {
       setProperty("uniqueId", unitId);
     }
-  }, [uniqueId, unitId, setProperty]);
+  }, [uniqueId, unitId]);
 
   if (properties === undefined || !PandaBridge.isStudio) {
     return null;
