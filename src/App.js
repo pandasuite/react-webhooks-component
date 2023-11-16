@@ -10,10 +10,11 @@ import Configuration from './components/Configuration';
 require('isomorphic-fetch');
 
 function App() {
-  const { properties } = usePandaBridge();
+  const { properties, setProperty } = usePandaBridge();
   const {
     [PandaBridge.UNIQUE_ID]: unitId,
     [PandaBridge.PANDASUITE_HOST_WITH_SCHEME]: host,
+    uniqueId,
   } = properties || {};
   const [data, setData] = useState();
 
@@ -21,7 +22,7 @@ function App() {
     if (unitId && host) {
       const socket = socketIOClient(host, { path: '/mo/socket.io' });
 
-      socket.on(fnv1a(unitId).toString(16), (raw) => {
+      socket.on(fnv1a(uniqueId || unitId).toString(16), (raw) => {
         const { name, body = {} } = raw || {};
 
         if (name) {
@@ -35,7 +36,13 @@ function App() {
       return () => { socket.disconnect(); };
     }
     return () => {};
-  }, [unitId, host]);
+  }, [uniqueId, unitId, host]);
+
+  useEffect(() => {
+    if (!uniqueId) {
+      setProperty("uniqueId", unitId);
+    }
+  }, [uniqueId, unitId, setProperty]);
 
   if (properties === undefined || !PandaBridge.isStudio) {
     return null;

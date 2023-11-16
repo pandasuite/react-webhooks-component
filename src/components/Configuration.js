@@ -22,10 +22,11 @@ function Configuration(props) {
   const {
     [PandaBridge.UNIQUE_ID]: unitId,
     [PandaBridge.PANDASUITE_HOST_WITH_SCHEME]: host,
+    uniqueId,
   } = properties;
 
   useEffect(() => {
-    fetch(`${host}api/tokens/${unitId}`, {
+    fetch(`${host}api/tokens/${uniqueId || unitId}`, {
       credentials: 'include',
     }).then(async (response) => {
       if (response.ok) {
@@ -37,9 +38,9 @@ function Configuration(props) {
     }).catch(() => {
       setState({ error: intl.formatMessage({ id: 'request.error.generic' }) });
     });
-  }, [host, unitId, intl]);
+  }, [host, uniqueId, unitId, intl]);
 
-  const webhookLink = `${host}mo/hooks/${unitId}/${state.token}/dataReceived`;
+  const webhookLink = `${host}mo/hooks/${uniqueId || unitId}/${state.token}/dataReceived`;
 
   return (
     <>

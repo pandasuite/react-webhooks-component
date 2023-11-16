@@ -7,6 +7,14 @@
       "markers": false
     },
 
+    "properties": [
+      {
+        "id": "uniqueId",
+        "type": "String",
+        "hidden": true
+      }
+    ],
+
     "events": [
       {
         "id": "dataReceived",
