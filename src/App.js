@@ -40,7 +40,7 @@ function App() {
 
   useEffect(() => {
     if (!uniqueId) {
-      setProperty("uniqueId", unitId);
+      setProperty("uniqueId", unitId.substring(1));
     }
   }, [uniqueId, unitId]);
 
