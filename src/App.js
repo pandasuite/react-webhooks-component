@@ -39,7 +39,7 @@ function App() {
   }, [uniqueId, unitId, host]);
 
   useEffect(() => {
-    if (!uniqueId) {
+    if (unitId && !uniqueId) {
       setProperty("uniqueId", unitId.substring(1));
     }
   }, [uniqueId, unitId]);
