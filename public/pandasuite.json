@@ -1,28 +1,40 @@
 {
-    "version": "2.0.0",
-    "main": "",
-  
-    "system": {
-      "localization": false,
-      "markers": false
-    },
-
-    "properties": [
-      {
-        "id": "uniqueId",
-        "type": "String",
-        "hidden": true
+  "meta": {
+    "stype": "webhooks",
+    "componentURL": "https://github.com/pandasuite/react-webhooks-component/",
+    "description": "Receives real-time push events from PandaSuite's webhook infrastructure via WebSocket. Triggers actions when external server events arrive.",
+    "locale_description": {
+      "fr_FR": "Reçoit des événements push en temps réel depuis l'infrastructure webhook de PandaSuite via WebSocket. Déclenche des actions quand des événements du serveur externe arrivent."
+    }
+  },
+  "version": "2.0.0",
+  "main": "",
+  "system": {
+    "localization": false,
+    "markers": false
+  },
+  "properties": [
+    {
+      "id": "uniqueId",
+      "type": "String",
+      "hidden": true,
+      "description": "Unique identifier for this webhook listener instance.",
+      "locale_description": {
+        "fr_FR": "Identifiant unique de cette instance d'écoute de webhook."
       }
-    ],
-
-    "events": [
-      {
-        "id": "dataReceived",
-        "name": "Data received",
-        "locale_name": {
-          "fr_FR": "Données reçues"
-        }
+    }
+  ],
+  "events": [
+    {
+      "id": "dataReceived",
+      "name": "Data received",
+      "locale_name": {
+        "fr_FR": "Données reçues"
+      },
+      "description": "Fires when data is received from the webhook server.",
+      "locale_description": {
+        "fr_FR": "Se déclenche quand des données sont reçues du serveur webhook."
       }
-    ]
+    }
+  ]
 }
-  
