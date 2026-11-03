@@ -8,6 +8,7 @@ module.exports = {
     require('@tailwindcss/forms')({
       strategy: 'class',
     }),
+    require('pandasuite-bridge/studio-theme'),
   ],
   theme: {
     extend: {
